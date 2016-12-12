@@ -10,7 +10,7 @@
 
 <div class="row">
   <div class="col-md-4">
-    Some controls will go here
+    @{ Html.RenderPartial("AddFilm"); }
   </div>
   <div class="col-md-8">
     @{ Html.RenderPartial("FilmList", Model.FilmListViewModel); }

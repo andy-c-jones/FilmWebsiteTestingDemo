@@ -104,6 +104,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\FilmsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs" />
     <Compile Include="Models\Film.cs" />
@@ -144,6 +145,7 @@
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\site.js" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\AddFilm.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\FilmList.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

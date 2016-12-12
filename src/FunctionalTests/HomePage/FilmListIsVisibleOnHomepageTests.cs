@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using TestHelpers;
 
-namespace FunctionalTests
+namespace FunctionalTests.HomePage
 {
     [TestFixture]
     public class FilmListIsVisibleOnHomepageTests

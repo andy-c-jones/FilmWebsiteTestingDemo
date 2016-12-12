@@ -51,5 +51,18 @@ namespace FunctionalTests
         public void GoToPage() => _driver.Navigate().GoToUrl(Url);
 
         private string ElementText(string cssSelector) => _driver.FindElementByCssSelector(cssSelector).Text;
+
+        public void EnterFilmNameIntoAddControl(string testfilm)
+        {
+        }
+
+        public void EnterFilmYearIntoAddControl(int i)
+        {
+        }
+
+        public void ClickAddFilm()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

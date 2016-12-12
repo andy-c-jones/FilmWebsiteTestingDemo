@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ApplicationSetup.cs" />
     <Compile Include="BrowserContext.cs" />
+    <Compile Include="HomePage\AddFilmOnHomepageTests.cs" />
     <Compile Include="HomePage\FilmListIsVisibleOnHomepageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
