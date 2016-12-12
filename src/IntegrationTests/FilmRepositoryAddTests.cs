@@ -1,6 +1,7 @@
 ﻿using FilmWishlist.Models;
-using IntegrationTestingAndMockingWorkshop;
+using FilmWishlist.Repositories;
 using NUnit.Framework;
+using TestHelpers;
 
 namespace IntegrationTests
 {

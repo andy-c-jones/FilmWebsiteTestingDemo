@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FilmRepositoryGetAllTests.cs" />
-    <Compile Include="SQLHelper.cs" />
     <Compile Include="FilmRepositoryAddTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,6 +50,10 @@
     <ProjectReference Include="..\FilmWishlist\FilmWishlist.csproj">
       <Project>{3A521F56-37F6-47D3-807F-CB1C10873104}</Project>
       <Name>FilmWishlist</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestHelpers\TestHelpers.csproj">
+      <Project>{05BEF03B-8142-4D83-9C51-7D364AC100BC}</Project>
+      <Name>TestHelpers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

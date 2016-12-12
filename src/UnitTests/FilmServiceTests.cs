@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using FilmWishlist.Models;
+using FilmWishlist.Repositories;
 using FilmWishlist.Service;
-using IntegrationTestingAndMockingWorkshop;
 using Moq;
 using NUnit.Framework;
 

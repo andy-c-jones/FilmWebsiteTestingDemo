@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using Dapper;
 using FilmWishlist.Models;
 
-namespace IntegrationTestingAndMockingWorkshop
+namespace FilmWishlist.Repositories
 {
     public class FilmRepository : IFilmRepository
     {

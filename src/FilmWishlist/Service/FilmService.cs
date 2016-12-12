@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using FilmWishlist.Models;
-using IntegrationTestingAndMockingWorkshop;
+using FilmWishlist.Repositories;
 
 namespace FilmWishlist.Service
 {
-    public class FilmService
+    public class FilmService : IFilmService
     {
         private readonly IFilmRepository _filmRepository;
 

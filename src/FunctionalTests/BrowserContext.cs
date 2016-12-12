@@ -45,9 +45,10 @@ namespace FunctionalTests
             Url = baseUrl;
         }
 
-        public void GoToPage() => _driver.Navigate().GoToUrl(Url);
-
         public string FirstFilmTitle() => ElementText("tbody tr td");
+        public string FirstFilmYear() => ElementText("tbody tr td:nth-child(2)");
+
+        public void GoToPage() => _driver.Navigate().GoToUrl(Url);
 
         private string ElementText(string cssSelector) => _driver.FindElementByCssSelector(cssSelector).Text;
     }

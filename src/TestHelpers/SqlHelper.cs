@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Data.SqlClient;
 
-namespace IntegrationTests
+namespace TestHelpers
 {
     public class SqlHelper
     {

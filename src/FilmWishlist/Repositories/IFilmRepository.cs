@@ -1,6 +1,6 @@
 ﻿using FilmWishlist.Models;
 
-namespace IntegrationTestingAndMockingWorkshop
+namespace FilmWishlist.Repositories
 {
     public interface IFilmRepository
     {
