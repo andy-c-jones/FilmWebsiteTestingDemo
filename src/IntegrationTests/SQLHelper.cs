@@ -12,7 +12,7 @@ namespace IntegrationTests
             using (var sqlConnection = new SqlConnection(ConnectionString))
             {
                 sqlConnection.Open();
-                string cmdText = "TRUNCATE TABLE Films";
+                const string cmdText = "TRUNCATE TABLE Films";
                 var cmd = new SqlCommand(cmdText, sqlConnection);
                 cmd.ExecuteNonQuery();
             }
@@ -51,6 +51,19 @@ namespace IntegrationTests
                     }
                     throw new Exception("No data present");
                 }
+            }
+        }
+
+        public static void AddFilm(string title, int year)
+        {
+            using (var sqlConnection = new SqlConnection(ConnectionString))
+            {
+                sqlConnection.Open();
+                const string CmdText = "INSERT INTO [dbo].[Films] ([Title] ,[Year]) VALUES (@title , @year)";
+                var cmd = new SqlCommand(CmdText, sqlConnection);
+                cmd.Parameters.Add(new SqlParameter("title", title));
+                cmd.Parameters.Add(new SqlParameter("year", year));
+                cmd.ExecuteNonQuery();
             }
         }
     }

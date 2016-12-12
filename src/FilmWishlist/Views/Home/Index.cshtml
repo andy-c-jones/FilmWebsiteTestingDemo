@@ -1,20 +1,18 @@
-﻿@{
+﻿@model FilmWishlist.Models.HomePageViewModel
+@{
   ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-  <h1>Films</h1>
-  <p class="lead">Welcome to an awesome list of films.</p>
+  <h1>Film Wishlist</h1>
+  <p class="lead">What would you like to watch next?</p>
 </div>
 
 <div class="row">
   <div class="col-md-4">
-    x
+    Some controls will go here
   </div>
-  <div class="col-md-4">
-    x
-  </div>
-  <div class="col-md-4">
-   x
+  <div class="col-md-8">
+    @{ Html.RenderPartial("FilmList", Model.FilmListViewModel); }
   </div>
 </div>

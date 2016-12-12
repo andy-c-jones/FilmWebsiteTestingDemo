@@ -2,7 +2,7 @@
 {
     public enum RepositoryResult
     {
-        Successful,
-        Failed
+        Failed,
+        Successful
     }
 }

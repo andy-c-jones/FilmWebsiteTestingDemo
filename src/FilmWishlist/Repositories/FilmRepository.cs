@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
+using Dapper;
 using FilmWishlist.Models;
 
 namespace IntegrationTestingAndMockingWorkshop
@@ -22,10 +22,7 @@ namespace IntegrationTestingAndMockingWorkshop
                 {
                     sqlConnection.Open();
                     const string cmdText = "INSERT INTO Films (Title, Year) VALUES (@Title, @Year)";
-                    var cmd = new SqlCommand(cmdText, sqlConnection);
-                    cmd.Parameters.Add("Title", SqlDbType.NVarChar, -1).Value = film.Title;
-                    cmd.Parameters.Add("Year", SqlDbType.Int).Value = film.Year;
-                    cmd.ExecuteNonQuery();
+                    sqlConnection.Execute(cmdText, film);
                     return RepositoryResult.Successful;
                 }
             }
@@ -34,10 +31,22 @@ namespace IntegrationTestingAndMockingWorkshop
                 return RepositoryResult.Failed;
             }
         }
-    }
 
-    public interface IFilmRepository
-    {
-        RepositoryResult Add(Film film);
+        public GetFilmsResult GetAll()
+        {
+            try
+            {
+                using (var sqlConnection = new SqlConnection(_connectionString))
+                {
+                    sqlConnection.Open();
+                    var films = sqlConnection.Query<FilmEntity>("SELECT [Title],[Year] FROM [dbo].[Films]");
+                    return GetFilmsResult.Success(films);
+                }
+            }
+            catch (Exception)
+            {
+                return GetFilmsResult.Unsuccessful();
+            }
+        }
     }
 }
