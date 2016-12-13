@@ -1,4 +1,3 @@
-﻿using System;
 using System.Collections.Generic;
 using FilmWishlist.Models;
 using FilmWishlist.Repositories;
@@ -7,7 +6,7 @@ using PactNet;
 using PactNet.Mocks.MockHttpService;
 using PactNet.Mocks.MockHttpService.Models;
 
-namespace IntegrationTests
+namespace ContractTests
 {
     [TestFixture]
     public class FilmDescriptionRepositoryTests

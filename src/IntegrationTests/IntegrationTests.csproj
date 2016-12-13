@@ -42,9 +42,6 @@
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PactNet, Version=1.2.0.151, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\PactNet.1.2.0\lib\net40\PactNet.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -57,10 +54,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FilmDescriptionRepositoryTests.cs" />
     <Compile Include="FilmRepositoryGetAllTests.cs" />
     <Compile Include="FilmRepositoryAddTests.cs" />
-    <Compile Include="OmdbApiUrlProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
