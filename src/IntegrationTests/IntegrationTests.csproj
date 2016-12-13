@@ -33,9 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Nancy, Version=0.23.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Nancy.0.23.1\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Hosting.Self, Version=0.23.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Nancy.Hosting.Self.0.23.1\lib\net40\Nancy.Hosting.Self.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PactNet, Version=1.2.0.151, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\PactNet.1.2.0\lib\net40\PactNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.IO.Abstractions, Version=1.4.0.86, Culture=neutral, PublicKeyToken=d480b5b72fb413da">
+      <HintPath>..\packages\System.IO.Abstractions.1.4.0.86\lib\net35\System.IO.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
       <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
@@ -45,6 +60,7 @@
     <Compile Include="FilmDescriptionRepositoryTests.cs" />
     <Compile Include="FilmRepositoryGetAllTests.cs" />
     <Compile Include="FilmRepositoryAddTests.cs" />
+    <Compile Include="OmdbApiUrlProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +72,9 @@
       <Project>{05BEF03B-8142-4D83-9C51-7D364AC100BC}</Project>
       <Name>TestHelpers</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
