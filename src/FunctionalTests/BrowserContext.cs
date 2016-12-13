@@ -1,6 +1,5 @@
 ﻿using System;
 using FunctionalTests.PageModel;
-using NUnit.Framework.Constraints;
 using OpenQA.Selenium.Chrome;
 
 namespace FunctionalTests
@@ -21,5 +20,7 @@ namespace FunctionalTests
 
         public static string CurrentUrl() => Driver.Url;
         public static string CurrentPageTitle() => Driver.Title;
+        public static bool PageHtmlContains(string text) => Driver.PageSource.Contains(text);
+
     }
 }

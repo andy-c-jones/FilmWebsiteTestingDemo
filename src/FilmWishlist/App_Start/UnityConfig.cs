@@ -38,7 +38,8 @@ namespace FilmWishlist
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
             var connectionString = "Data Source=.;Initial Catalog=Films;Integrated Security=True";
-            container.RegisterType<IFilmDescriptionRepository, FilmDescriptionRepository>();
+            var OmdbApiUrl = "http://www.omdbapi.com/";
+            container.RegisterType<IFilmDescriptionRepository, FilmDescriptionRepository>(new InjectionConstructor(OmdbApiUrl));
             container.RegisterType<IFilmDescriptionService, FilmDescriptionService>();
             container.RegisterType<IAddFilmService, AddFilmService>();
             container.RegisterType<IFilmRepository, FilmRepository>(new InjectionConstructor(connectionString));

@@ -42,6 +42,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FilmDescriptionRepositoryTests.cs" />
     <Compile Include="FilmRepositoryGetAllTests.cs" />
     <Compile Include="FilmRepositoryAddTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
