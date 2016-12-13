@@ -14,8 +14,24 @@ namespace FilmWishlist.Service
             _filmRepository = filmRepository;
         }
 
-        public RepositoryResult AddFilm(string title, int year) => _filmRepository.Add(new Film(title, year));
+        public AddFilmResult AddFilm(string title, int year) => AddFilmUnlessFilmsCannotBeRetrieved(title, year, _filmRepository.GetAll());
         public IEnumerable<Film> GetWishlist() => Wishlist(_filmRepository.GetAll());
+
+
+        private AddFilmResult AddFilmUnlessFilmsCannotBeRetrieved(string title, int year, GetFilmsResult getFilmsResult) =>
+            getFilmsResult.Result == RepositoryResult.Failed
+                ? AddFilmResult.Failed
+                : AddFilmUnlessDuplicate(title, year, getFilmsResult.Value);
+
+        private AddFilmResult AddFilmUnlessDuplicate(string title, int year, IEnumerable<FilmEntity> films) =>
+            films.Any(f => f.Title == title && f.Year == year)
+                ? AddFilmResult.Duplicate
+                : Add(title, year);
+
+        private AddFilmResult Add(string title, int year) =>
+            _filmRepository.Add(new Film(title, year)) == RepositoryResult.Successful
+            ? AddFilmResult.Successful
+            : AddFilmResult.Failed;
 
         private static IEnumerable<Film> Wishlist(GetFilmsResult result) => result.Result == RepositoryResult.Failed ? EmptyFilmsList() : FilmsFromEntities(result.Value);
         private static IEnumerable<Film> FilmsFromEntities(IEnumerable<FilmEntity> filmEntities) => filmEntities.Select(filmEntity => new Film(filmEntity.Title, filmEntity.Year));

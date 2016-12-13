@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
@@ -20,10 +21,12 @@ namespace FunctionalTests.PageModel
         public void GoToPage() => _driver.Navigate().GoToUrl(Url);
         public void EnterFilmNameIntoAddControl(string name) => AddFilmTitleBox().SendKeys(name);
         public void EnterFilmYearIntoAddControl(int year) => AddFilmYearBox().SendKeys(year.ToString());
+        public string GetDuplicateError() => DuplicateError().Text;
 
         private IWebElement AddFilmTitleBox() => FindElementByCssSelector("input[name='Title']");
         private IWebElement AddFilmYearBox() => FindElementByCssSelector("input[name='Year']");
         private IWebElement AddFilmButton() => FindElementByCssSelector("input[type='submit']");
+        private IWebElement DuplicateError() => FindElementByCssSelector(".alert-warning");
 
         private string ElementText(string cssSelector) => FindElementByCssSelector(cssSelector).Text;
         private IWebElement FindElementByCssSelector(string cssSelector) => _driver.FindElementByCssSelector(cssSelector);

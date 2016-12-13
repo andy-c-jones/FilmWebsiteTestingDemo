@@ -14,6 +14,6 @@ namespace FilmWishlist.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(string title, int year) => Redirect(_filmService.AddFilm(title, year) == RepositoryResult.Successful ? "/" : "/?failed=true");
+        public ActionResult Add(string title, int year) => Redirect(_filmService.AddFilm(title, year) == AddFilmResult.Successful ? "/" : "/?status=failedtoadd");
     }
 }

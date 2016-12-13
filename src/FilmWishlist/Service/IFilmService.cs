@@ -5,7 +5,7 @@ namespace FilmWishlist.Service
 {
     public interface IFilmService
     {
-        RepositoryResult AddFilm(string title, int year);
+        AddFilmResult AddFilm(string title, int year);
         IEnumerable<Film> GetWishlist();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using FilmWishlist.Models;
 using FilmWishlist.Service;
 
@@ -13,12 +14,21 @@ namespace FilmWishlist.Controllers
             _filmService = filmService;
         }
 
-        public ActionResult Index() => View(new HomePageViewModel
+        public ActionResult Index(string status) => View(new HomePageViewModel
         {
             FilmListViewModel = new FilmListViewModel
             {
                 Films = _filmService.GetWishlist()
+            },
+            AddFilmViewModel = new AddFilmViewModel
+            {
+                StatusViewName = AddFilmStatus(status)
             }
         });
+
+        private static string AddFilmStatus(string status)
+        {
+            return status == "failedtoadd" ? "DuplicateFilmWarning" : string.Empty;
+        }
     }
 }

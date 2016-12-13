@@ -107,6 +107,8 @@
     <Compile Include="Controllers\FilmsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs" />
+    <Compile Include="Models\AddFilmResult.cs" />
+    <Compile Include="Models\AddFilmViewModel.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\FilmEntity.cs" />
     <Compile Include="Models\FilmListViewModel.cs" />
@@ -146,6 +148,7 @@
     <Content Include="Scripts\site.js" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\AddFilm.cshtml" />
+    <Content Include="Views\Shared\DuplicateFilmWarning.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\FilmList.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -155,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content" />
+    <Folder Include="Controllers" />
     <Folder Include="Repositories" />
     <Folder Include="Views\Home" />
   </ItemGroup>
