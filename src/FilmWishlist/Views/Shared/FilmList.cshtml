@@ -9,7 +9,7 @@
   </thead>
   @foreach (var film in Model.Films)
   {
-      <tr>
+      <tr class='clickable-row' data-href=@string.Format("Films/{0}-{1}/Details", Uri.EscapeDataString(film.Title), film.Year)>
         <td>
           @film.Title
         </td>

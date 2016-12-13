@@ -3,7 +3,7 @@ using FilmWishlist.Models;
 
 namespace FilmWishlist.Service
 {
-    public interface IFilmService
+    public interface IAddFilmService
     {
         AddFilmResult AddFilm(string title, int year);
         IEnumerable<Film> GetWishlist();

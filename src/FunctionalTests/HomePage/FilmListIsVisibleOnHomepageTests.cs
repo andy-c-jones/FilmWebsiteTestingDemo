@@ -10,12 +10,12 @@ namespace FunctionalTests.HomePage
         public void WhenNavigatingToTheHomePageThenTheListOfFilmsIsVisible()
         {
             SqlHelper.TruncateFilmsTable();
-            SqlHelper.AddFilm("Spider-Man: Homecoming", 2017);
+            SqlHelper.AddFilm("Spider-Man Homecoming", 2017);
 
             var homepage = BrowserContext.Site.Homepage;
             homepage.GoToPage();
 
-            Assert.That(homepage.FirstFilmTitleText(), Is.EqualTo("Spider-Man: Homecoming"));
+            Assert.That(homepage.FirstFilmTitleText(), Is.EqualTo("Spider-Man Homecoming"));
             Assert.That(homepage.FirstFilmYearText(), Is.EqualTo("2017"));
         }
     }

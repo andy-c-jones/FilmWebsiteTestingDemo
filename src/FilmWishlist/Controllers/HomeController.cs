@@ -6,11 +6,11 @@ namespace FilmWishlist.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IFilmService _filmService;
+        private readonly IAddFilmService _addFilmService;
 
-        public HomeController(IFilmService filmService)
+        public HomeController(IAddFilmService addFilmService)
         {
-            _filmService = filmService;
+            _addFilmService = addFilmService;
         }
 
         [Route("~/")]
@@ -18,7 +18,7 @@ namespace FilmWishlist.Controllers
         {
             FilmListViewModel = new FilmListViewModel
             {
-                Films = _filmService.GetWishlist()
+                Films = _addFilmService.GetWishlist()
             },
             AddFilmViewModel = new AddFilmViewModel
             {
@@ -26,9 +26,6 @@ namespace FilmWishlist.Controllers
             }
         });
 
-        private static string AddFilmStatus(string status)
-        {
-            return status == "failedtoadd" ? "DuplicateFilmWarning" : string.Empty;
-        }
+        private static string AddFilmStatus(string status) => status == "failedtoadd" ? "DuplicateFilmWarning" : string.Empty;
     }
 }

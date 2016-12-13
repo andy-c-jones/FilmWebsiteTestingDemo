@@ -22,7 +22,7 @@ namespace UnitTests
                 .Setup(r => r.Add(It.Is<Film>(f => f.Title == "Shawshank Redemption" && f.Year == 1994)))
                 .Returns(RepositoryResult.Successful);
 
-            var filmService = new FilmService(filmRepository.Object);
+            var filmService = new AddFilmService(filmRepository.Object);
 
             var result = filmService.AddFilm("Shawshank Redemption", 1994);
 
@@ -40,7 +40,7 @@ namespace UnitTests
                 .Setup(r => r.Add(It.Is<Film>(f => f.Title == "Shawshank Redemption" && f.Year == 1994)))
                 .Returns(RepositoryResult.Failed);
 
-            var filmService = new FilmService(filmRepository.Object);
+            var filmService = new AddFilmService(filmRepository.Object);
 
             var result = filmService.AddFilm("Shawshank Redemption", 1994);
 
@@ -56,7 +56,7 @@ namespace UnitTests
                 .Setup(r => r.GetAll())
                 .Returns(new GetFilmsResult {Result = RepositoryResult.Successful, Value = filmEntities});
 
-            var filmService = new FilmService(filmRepository.Object);
+            var filmService = new AddFilmService(filmRepository.Object);
 
             var result = filmService.AddFilm("Shawshank Redemption", 1994);
 
@@ -71,7 +71,7 @@ namespace UnitTests
                 .Setup(r => r.GetAll())
                 .Returns(new GetFilmsResult {Result = RepositoryResult.Failed});
 
-            var filmService = new FilmService(filmRepository.Object);
+            var filmService = new AddFilmService(filmRepository.Object);
 
             var result = filmService.AddFilm("Shawshank Redemption", 1994);
 
@@ -87,7 +87,7 @@ namespace UnitTests
                 .Setup(r => r.GetAll())
                 .Returns(new GetFilmsResult { Result = RepositoryResult.Successful, Value =  films});
 
-            var filmService = new FilmService(filmRepository.Object);
+            var filmService = new AddFilmService(filmRepository.Object);
 
             var shawshank = filmService.GetWishlist().First(f => f.Title == "Shawshank Redemption");
             Assert.That(shawshank.Title, Is.EqualTo("Shawshank Redemption"));
@@ -102,7 +102,7 @@ namespace UnitTests
                 .Setup(r => r.GetAll())
                 .Returns(new GetFilmsResult { Result = RepositoryResult.Failed});
 
-            var filmService = new FilmService(filmRepository.Object);
+            var filmService = new AddFilmService(filmRepository.Object);
 
             var result = filmService.GetWishlist();
             Assert.That(result.Count(), Is.EqualTo(0));

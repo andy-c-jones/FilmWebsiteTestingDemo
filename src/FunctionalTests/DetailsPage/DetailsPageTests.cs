@@ -18,6 +18,7 @@ namespace FunctionalTests.DetailsPage
             homepage.ClickOnFirstFilm();
 
             Assert.That(BrowserContext.CurrentUrl(), Is.EqualTo(detailsPage.Url("Inception", 2010)));
+            Assert.That(BrowserContext.CurrentPageTitle(), Is.EqualTo("Inception (2010)"));
         }
 
     }

@@ -5,11 +5,11 @@ using FilmWishlist.Repositories;
 
 namespace FilmWishlist.Service
 {
-    public class FilmService : IFilmService
+    public class AddFilmService : IAddFilmService
     {
         private readonly IFilmRepository _filmRepository;
 
-        public FilmService(IFilmRepository filmRepository)
+        public AddFilmService(IFilmRepository filmRepository)
         {
             _filmRepository = filmRepository;
         }

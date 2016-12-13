@@ -38,7 +38,9 @@ namespace FilmWishlist
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
             var connectionString = "Data Source=.;Initial Catalog=Films;Integrated Security=True";
-            container.RegisterType<IFilmService, FilmService>();
+            container.RegisterType<IFilmDescriptionRepository, FilmDescriptionRepository>();
+            container.RegisterType<IFilmDescriptionService, FilmDescriptionService>();
+            container.RegisterType<IAddFilmService, AddFilmService>();
             container.RegisterType<IFilmRepository, FilmRepository>(new InjectionConstructor(connectionString));
         }
     }

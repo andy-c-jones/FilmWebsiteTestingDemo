@@ -20,5 +20,6 @@ namespace FunctionalTests
         public static void Stop() => Driver.Dispose();
 
         public static string CurrentUrl() => Driver.Url;
+        public static string CurrentPageTitle() => Driver.Title;
     }
 }
