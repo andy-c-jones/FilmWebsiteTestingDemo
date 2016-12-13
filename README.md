@@ -17,7 +17,7 @@ To run the contract tests you must first rebuild the whole project inside you ID
 * ``./runContractTestsAgainstFakeServices.ps1`` will run the contract tests against the real services
 Remember to rebuild your solution each time you want to run your contract tests from outside your IDE!
 
-#Other resources
+#Other resources used in this project
 * [NUnit](https://github.com/nunit/nunit) - Testing framework
 * [Moq](https://github.com/moq/moq) - Mocking library
 * [pact-net](https://github.com/SEEK-Jobs/pact-net) - .NET version of Pact. Enables consumer driven contract testing, providing a mock service and DSL for the consumer project, and interaction playback and verification for the service provider project.
