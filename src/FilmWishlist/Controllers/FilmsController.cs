@@ -4,6 +4,7 @@ using FilmWishlist.Service;
 
 namespace FilmWishlist.Controllers
 {
+    [RoutePrefix("Films")]
     public class FilmsController : Controller
     {
         private readonly IFilmService _filmService;
@@ -14,6 +15,7 @@ namespace FilmWishlist.Controllers
         }
 
         [HttpPost]
+        [Route("Add")]
         public ActionResult Add(string title, int year) => Redirect(_filmService.AddFilm(title, year) == AddFilmResult.Successful ? "/" : "/?status=failedtoadd");
     }
 }

@@ -17,9 +17,8 @@ namespace FunctionalTests
             Site = new FilmWishlistSite(Driver, "http://localhost:44342/");
         }
 
-        public static void Stop()
-        {
-            Driver.Dispose();
-        }
+        public static void Stop() => Driver.Dispose();
+
+        public static string CurrentUrl() => Driver.Url;
     }
 }

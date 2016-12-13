@@ -15,8 +15,8 @@ namespace FunctionalTests.HomePage
             var homepage = BrowserContext.Site.Homepage;
             homepage.GoToPage();
 
-            Assert.That(homepage.FirstFilmTitle(), Is.EqualTo("Spider-Man: Homecoming"));
-            Assert.That(homepage.FirstFilmYear(), Is.EqualTo("2017"));
+            Assert.That(homepage.FirstFilmTitleText(), Is.EqualTo("Spider-Man: Homecoming"));
+            Assert.That(homepage.FirstFilmYearText(), Is.EqualTo("2017"));
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using FilmWishlist.Models;
 using FilmWishlist.Service;
 
@@ -14,6 +13,7 @@ namespace FilmWishlist.Controllers
             _filmService = filmService;
         }
 
+        [Route("~/")]
         public ActionResult Index(string status) => View(new HomePageViewModel
         {
             FilmListViewModel = new FilmListViewModel

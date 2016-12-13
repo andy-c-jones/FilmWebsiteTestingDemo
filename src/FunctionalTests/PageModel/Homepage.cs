@@ -15,20 +15,21 @@ namespace FunctionalTests.PageModel
             Url = baseUrl;
         }
 
-        public string FirstFilmTitle() => ElementText("tbody tr td");
-        public string FirstFilmYear() => ElementText("tbody tr td:nth-child(2)");
+        public string FirstFilmTitleText() => FirstFilmTitle().Text;
+        public string FirstFilmYearText() => FindElementByCssSelector("tbody tr td:nth-child(2)").Text;
         public void ClickAddFilm() => AddFilmButton().Click();
         public void GoToPage() => _driver.Navigate().GoToUrl(Url);
         public void EnterFilmNameIntoAddControl(string name) => AddFilmTitleBox().SendKeys(name);
         public void EnterFilmYearIntoAddControl(int year) => AddFilmYearBox().SendKeys(year.ToString());
         public string GetDuplicateError() => DuplicateError().Text;
+        public void ClickOnFirstFilm() => FirstFilmTitle().Click();
 
+        private IWebElement FirstFilmTitle() => FindElementByCssSelector("tbody tr td");
         private IWebElement AddFilmTitleBox() => FindElementByCssSelector("input[name='Title']");
         private IWebElement AddFilmYearBox() => FindElementByCssSelector("input[name='Year']");
         private IWebElement AddFilmButton() => FindElementByCssSelector("input[type='submit']");
         private IWebElement DuplicateError() => FindElementByCssSelector(".alert-warning");
 
-        private string ElementText(string cssSelector) => FindElementByCssSelector(cssSelector).Text;
         private IWebElement FindElementByCssSelector(string cssSelector) => _driver.FindElementByCssSelector(cssSelector);
     }
 }

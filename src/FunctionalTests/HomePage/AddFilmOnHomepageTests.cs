@@ -18,8 +18,8 @@ namespace FunctionalTests
             homepage.EnterFilmYearIntoAddControl(2010);
             homepage.ClickAddFilm();
 
-            Assert.That(homepage.FirstFilmTitle(), Is.EqualTo("Inception"));
-            Assert.That(homepage.FirstFilmYear(), Is.EqualTo("2010"));
+            Assert.That(homepage.FirstFilmTitleText(), Is.EqualTo("Inception"));
+            Assert.That(homepage.FirstFilmYearText(), Is.EqualTo("2010"));
         }
 
         [Test]
@@ -37,7 +37,7 @@ namespace FunctionalTests
             homepage.EnterFilmYearIntoAddControl(2010);
             homepage.ClickAddFilm();
 
-            Assert.That(homepage.GetDuplicateError(), Is.EqualTo("You already have this film on the list!"));
+            Assert.That(homepage.GetDuplicateError().Contains("You already have this film on the list!"), Is.True);
         }
     }
 }
