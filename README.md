@@ -18,8 +18,8 @@ To run the contract tests you must first rebuild the whole project inside you ID
 Remember to rebuild your solution each time you want to run your contract tests from outside your IDE!
 
 #Other resources used in this project
-* [NUnit](https://github.com/nunit/nunit) - Testing framework
-* [Moq](https://github.com/moq/moq) - Mocking library
+* [NUnit](https://github.com/nunit/nunit) - NUnit is a unit-testing framework for all .Net languages.
+* [Moq](https://github.com/moq/moq) - The most popular and friendly mocking framework for .NET
 * [pact-net](https://github.com/SEEK-Jobs/pact-net) - .NET version of Pact. Enables consumer driven contract testing, providing a mock service and DSL for the consumer project, and interaction playback and verification for the service provider project.
 * [RestSharp](https://github.com/restsharp/RestSharp) - Simple REST and HTTP API Client for .NET
 * [Bootstrap](http://getbootstrap.com/) - Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
