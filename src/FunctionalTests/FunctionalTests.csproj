@@ -49,6 +49,8 @@
     <Compile Include="BrowserContext.cs" />
     <Compile Include="HomePage\AddFilmOnHomepageTests.cs" />
     <Compile Include="HomePage\FilmListIsVisibleOnHomepageTests.cs" />
+    <Compile Include="PageModel\FilmWishlistSite.cs" />
+    <Compile Include="PageModel\Homepage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

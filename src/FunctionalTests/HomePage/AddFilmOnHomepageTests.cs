@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using TestHelpers;
 
 namespace FunctionalTests
 {
@@ -8,6 +9,8 @@ namespace FunctionalTests
         [Test]
         public void GivenTheHomepageWhenFilmAddedViaAddControlThenTheFilmShouldBeRenderedInTheList()
         {
+            SqlHelper.TruncateFilmsTable();
+
             var homepage = BrowserContext.Site.Homepage;
 
             homepage.GoToPage();
