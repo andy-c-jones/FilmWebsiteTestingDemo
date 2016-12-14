@@ -11,13 +11,13 @@ To use the project execute the "SetupDatabase.sql" script against you local data
 
 Open the solution and run all tests with your IDE to make sure it all works.
 
-#Contract tests
+##Contract tests
 To run the contract tests you must first rebuild the whole project inside you IDE you can then run either of the scripts in a powershell session:
 * ``./runContractTestsAgainstFakeServices.ps1`` will run the contract tests against the fakes
 * ``./runContractTestsAgainstFakeServices.ps1`` will run the contract tests against the real services
 Remember to rebuild your solution each time you want to run your contract tests from outside your IDE!
 
-#Other resources used in this project
+##Other resources used in this project
 * [NUnit](https://github.com/nunit/nunit) - NUnit is a unit-testing framework for all .Net languages.
 * [Moq](https://github.com/moq/moq) - The most popular and friendly mocking framework for .NET
 * [pact-net](https://github.com/SEEK-Jobs/pact-net) - .NET version of Pact. Enables consumer driven contract testing, providing a mock service and DSL for the consumer project, and interaction playback and verification for the service provider project.
@@ -28,5 +28,5 @@ Remember to rebuild your solution each time you want to run your contract tests 
 
 
 
-#Todo
+##Todo
 * Add a proper build script so remembering to rebuild all each time before running contracts against real services is not a problem
