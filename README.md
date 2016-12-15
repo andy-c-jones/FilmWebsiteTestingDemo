@@ -14,7 +14,7 @@ Open the solution and run all tests with your IDE to make sure it all works.
 ##Contract tests
 To run the contract tests you must first rebuild the whole project inside you IDE you can then run either of the scripts in a powershell session:
 * ``./runContractTestsAgainstFakeServices.ps1`` will run the contract tests against the fakes
-* ``./runContractTestsAgainstFakeServices.ps1`` will run the contract tests against the real services
+* ``./runContractTestsAgainstRealServices.ps1`` will run the contract tests against the real services
 Remember to rebuild your solution each time you want to run your contract tests from outside your IDE!
 
 ##Other resources used in this project
