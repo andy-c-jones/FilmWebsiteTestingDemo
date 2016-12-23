@@ -16,15 +16,11 @@ namespace FilmWishlist.Repositories
 
         public GetDescriptionRepositoryResult GetDescriptionResult(string title, string year) => GetDescriptionRepositoryResult(Response(title, year));
 
-        private static RestRequest Request(string title, string year)
-        {
-            var request = new RestRequest(Method.GET);
-            request.AddQueryParameter("t", title);
-            request.AddQueryParameter("y", year);
-            request.AddQueryParameter("plot", "full");
-            request.AddQueryParameter("r", "json");
-            return request;
-        }
+        private static IRestRequest Request(string title, string year) => new RestRequest(Method.GET)
+            .AddQueryParameter("t", title)
+            .AddQueryParameter("y", year)
+            .AddQueryParameter("plot", "full")
+            .AddQueryParameter("r", "json");
 
         private static GetDescriptionRepositoryResult GetDescriptionRepositoryResult(IRestResponse<OmdbApiFilmResponse> response) =>
             response.Data.Plot == null
